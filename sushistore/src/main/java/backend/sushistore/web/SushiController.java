@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import backend.sushistore.domain.CategoryRepository;
@@ -49,4 +50,30 @@ public class SushiController {
 		repository.save(sushi);
 		return "redirect:/sushilist";
 	} */
+	@GetMapping("/edit/{id}")
+	public String editSushi(@PathVariable("id") Long id, Model model) {
+		Sushi originalSushi = repository.findById(id).orElse(null);
+		if(originalSushi != null) {
+			model.addAttribute("sushi", originalSushi);
+			model.addAttribute("categories", crepository.findAll());
+			return "editsushi";
+		}else {
+			return "redirect:/sushilist";
+		}
+		
+		
+	}
+	
+	@PostMapping(value="/update/{id}")
+	public String updateSushi(Sushi sushi) {
+		repository.save(sushi);
+		return "redirect:/sushilist";
+	}
+	
+	@GetMapping("/delete/{id}")
+	//@PreAuthorize("hasAuthority('ADMIN')")
+	public String deleteSushi(@PathVariable("id") Long id) {
+		repository.deleteById(id);
+		return "redirect:../sushilist";
+	}
 }
