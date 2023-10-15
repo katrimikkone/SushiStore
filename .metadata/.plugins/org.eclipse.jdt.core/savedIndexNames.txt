@@ -1,0 +1,10 @@
+INDEX VERSION 1.131+C:\Users\katri\HH2\Back end\sushistore\.metadata\.plugins\org.eclipse.jdt.core
+3311379404.index
+1865797976.index
+845226759.index
+130903706.index
+2807508824.index
+574676033.index
+1189528821.index
+248549155.index
+1944308015.index

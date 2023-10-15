@@ -1,0 +1,8 @@
+package backend.sushistore.domain;
+
+import jakarta.persistence.Entity;
+
+@Entity
+public class Category {
+
+}

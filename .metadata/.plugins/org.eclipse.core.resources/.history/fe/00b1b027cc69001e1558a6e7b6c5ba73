@@ -1,0 +1,24 @@
+package backend.sushistore;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import backend.sushistore.domain.Sushi;
+import backend.sushistore.domain.SushiRepository;
+
+@SpringBootApplication
+public class SushistoreApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SushistoreApplication.class, args);
+	}
+
+	public CommandLineRunner demo(SushiRepository repository) {
+		return (args) {
+			repository.save(new Sushi("sake", "salmon", 3.00));
+			repository.save(new Sushi("tamago", "egg", 2.00));
+			repository.save(new Sushi("ebi", "shrimp"));
+		};
+	}
+}

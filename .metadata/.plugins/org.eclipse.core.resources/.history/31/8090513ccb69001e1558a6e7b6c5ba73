@@ -1,0 +1,5 @@
+package backend.sushistore.web;
+
+public class SushiController {
+
+}

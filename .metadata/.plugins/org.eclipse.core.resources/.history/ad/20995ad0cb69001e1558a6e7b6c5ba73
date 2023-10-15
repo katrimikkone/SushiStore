@@ -1,0 +1,6 @@
+package backend.sushistore.domain;
+
+public class SushiRepository {
+	public interface SushiRepository extends CrudRepository<Sushi, Long>{
+		List<Sushi> findByName(String name);
+}
