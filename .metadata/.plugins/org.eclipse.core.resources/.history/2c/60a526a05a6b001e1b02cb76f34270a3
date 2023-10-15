@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import backend.sushistore.domain.CategoryRepository;
 import backend.sushistore.domain.Sushi;
 import backend.sushistore.domain.SushiRepository;
-import jakarta.validation.Valid;
 
 
 @Controller
@@ -42,13 +41,13 @@ public class SushiController {
 		return "addsushi";
 	}
 	
-	/*	@PostMapping("/save")
+	@PostMapping("/save")
 	public String save(@ModelAttribute Sushi sushi) { 
 		repository.save(sushi);
 		return "redirect:sushilist";
-	}  */
+	} 
 	
-		@PostMapping("/save")
+	/*	@PostMapping("/save")
 	public String save(@Valid @ModelAttribute("sushi") Sushi sushi, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("categories" ,crepository.findAll());
@@ -56,8 +55,7 @@ public class SushiController {
 		}
 		repository.save(sushi);
 		return "redirect:/sushilist";
-	}
-		
+	} */
 	@GetMapping("/edit/{id}")
 	public String editSushi(@PathVariable("id") Long id, Model model) {
 		Sushi originalSushi = repository.findById(id).orElse(null);

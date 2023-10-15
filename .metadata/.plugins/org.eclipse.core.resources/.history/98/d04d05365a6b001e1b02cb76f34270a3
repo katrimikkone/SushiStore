@@ -6,7 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
 
 @Entity
@@ -15,14 +14,11 @@ public class Sushi {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	@NotEmpty(message = "Anna tuotteen nimi.")
+	//@NotEmpty(message = "Tuotteen nimi ei voi olla tyhjä.")
 	@Size(min=3, max=20)
 	private String name;
 	
-	@NotEmpty(message = "Anna tuotteen kuvaus.")
-	@Size(min=3, max=50)
 	private String description;
-	
 	private double price;
 	
 	@ManyToOne

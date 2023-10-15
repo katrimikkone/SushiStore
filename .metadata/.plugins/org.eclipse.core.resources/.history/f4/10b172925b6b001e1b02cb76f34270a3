@@ -16,7 +16,6 @@
 				<div th:if="${#fields.hasErrors('sushi.name')}" th:errors="*{sushi.name}">Error</div>
 				<label for="description">Description</label>
 				<input type="text" id="description" th:field="*{sushi.description}" /><br/>
-				<div th:if="${#fields.hasErrors('sushi.description')}" th:errors="*{sushi.description}">Error</div>
 				<label for="price">Price</label>
 				<input type="text" id="price" th:field="*{sushi.price}" /><br/>
 				<label for="category">Category</label>

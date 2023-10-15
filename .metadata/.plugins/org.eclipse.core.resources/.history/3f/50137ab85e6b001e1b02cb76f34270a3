@@ -22,7 +22,6 @@ public class Sushi {
 	@NotEmpty(message = "Anna tuotteen kuvaus.")
 	@Size(min=3, max=50)
 	private String description;
-	
 	private double price;
 	
 	@ManyToOne
