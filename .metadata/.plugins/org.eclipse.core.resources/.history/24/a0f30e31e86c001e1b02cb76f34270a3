@@ -1,0 +1,27 @@
+package backend.sushistore;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.util.List;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+
+import backend.sushistore.domain.Sushi;
+import backend.sushistore.domain.SushiRepository;
+
+@DataJpaTest
+public class SushiRepositoryTests {
+
+	@Autowired
+	SushiRepository repository;
+	
+	@Test
+	public void findByNameShouldReturnSushi() {
+		List<Sushi> sushis = repository.findByName("ebi");
+		
+		assertThat(sushis).hasSize(1);
+		assertThat(sushis.get(0).getPrice()).isEqualTo(3);
+	}
+}

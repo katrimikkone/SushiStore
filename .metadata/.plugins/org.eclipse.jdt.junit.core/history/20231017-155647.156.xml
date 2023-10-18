@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SushiRepositoryTests" project="sushistore" tests="3" started="3" failures="0" errors="0" ignored="0">
+  <testsuite name="backend.sushistore.SushiRepositoryTests" time="0.693" displayname="SushiRepositoryTests" uniqueid="[engine:junit-jupiter]/[class:backend.sushistore.SushiRepositoryTests]">
+    <testcase name="createNewSushi" classname="backend.sushistore.SushiRepositoryTests" time="0.634" displayname="createNewSushi()" uniqueid="[engine:junit-jupiter]/[class:backend.sushistore.SushiRepositoryTests]/[method:createNewSushi()]"/>
+    <testcase name="deleteNewSushi" classname="backend.sushistore.SushiRepositoryTests" time="0.046" displayname="deleteNewSushi()" uniqueid="[engine:junit-jupiter]/[class:backend.sushistore.SushiRepositoryTests]/[method:deleteNewSushi()]"/>
+    <testcase name="findByNameShouldReturnSushi" classname="backend.sushistore.SushiRepositoryTests" time="0.011" displayname="findByNameShouldReturnSushi()" uniqueid="[engine:junit-jupiter]/[class:backend.sushistore.SushiRepositoryTests]/[method:findByNameShouldReturnSushi()]"/>
+  </testsuite>
+</testrun>

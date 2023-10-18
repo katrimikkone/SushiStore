@@ -42,11 +42,6 @@ public class SushiController {
 		return "addsushi";
 	}
 	
-	/*	@PostMapping("/save")
-	public String save(@ModelAttribute Sushi sushi) { 
-		repository.save(sushi);
-		return "redirect:sushilist";
-	}  */
 	
 		@PostMapping("/save")
 	public String save(@Valid @ModelAttribute("sushi") Sushi sushi, BindingResult bindingResult, Model model) {
