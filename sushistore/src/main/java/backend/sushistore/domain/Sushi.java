@@ -12,7 +12,7 @@ import jakarta.validation.constraints.Size;
 @Entity
 public class Sushi {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@NotEmpty(message = "Anna tuotteen nimi.")

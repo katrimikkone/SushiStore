@@ -3,6 +3,7 @@ package backend.sushistore.web;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,11 +41,10 @@ public class SushiRestController {
 		return repository.save(editedSushi);
 	}
 	
-	/*@GetMapping("/delete/{id}")
-	//@Preauthorize("hasRole('ADMIN')")
+	@DeleteMapping("/delete/{id}")
 	public String deleteSushi(@PathVariable("id") Long id) {
 		repository.deleteById(id);
-		return "redirect:/sushilist";
-	}*/
+		return "redirect:sushilist";
+	}
 
 }

@@ -24,6 +24,7 @@ public class SushiController {
 	@Autowired
 	private CategoryRepository crepository;
 	
+	
 	@GetMapping("/login")
 	public String login() {
 		return "login";
@@ -79,4 +80,5 @@ public class SushiController {
 		repository.deleteById(id);
 		return "redirect:../sushilist";
 	}
+	
 }
