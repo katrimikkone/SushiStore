@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="SushiRestTests" project="sushistore" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="backend.sushistore.SushiRestTests" time="0.847" displayname="SushiRestTests" uniqueid="[engine:junit-jupiter]/[class:backend.sushistore.SushiRestTests]">
+    <testcase name="statusOk" classname="backend.sushistore.SushiRestTests" time="0.847" displayname="statusOk()" uniqueid="[engine:junit-jupiter]/[class:backend.sushistore.SushiRestTests]/[method:statusOk()]"/>
+  </testsuite>
+</testrun>

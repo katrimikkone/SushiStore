@@ -1,0 +1,10 @@
+package backend.sushistore.domain;
+
+import java.sql.Blob;
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface SymbolRepository extends CrudRepository<Symbol, Long>{
+	List<Symbol> findByAddress(Blob address);
+}

@@ -1,0 +1,15 @@
+package backend.sushistore.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import backend.sushistore.domain.ImageRepository;
+
+@Service
+public class ImageDataService {
+	
+	@Autowired
+	private ImageRepository irepository;
+
+	
+}

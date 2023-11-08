@@ -1,0 +1,61 @@
+package backend.sushistore.web;
+
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.sql.Blob;
+import java.sql.SQLException;
+
+import javax.imageio.ImageIO;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+
+
+
+@Controller
+public class ImageController {
+	
+	
+	
+	
+	
+	@PostMapping("/addimage")
+	public void addImage(Model model) {
+	/*	BufferedImage img = null;
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+
+		try 
+		{
+		    img = ImageIO.read(new File("C:/Users/katri/HH2/Back end/images/sake.png")); 
+		    ImageIO.write(img, "png", baos);
+		} 
+		catch (IOException e) 
+		{
+		    e.printStackTrace();
+		}
+		
+		Blob blFile = null;
+		
+		try {
+			blFile = new javax.sql.rowset.serial.SerialBlob(baos.toByteArray());
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Symbol symbol = new Symbol();
+		symbol.content = blFile;
+		srepository.save(symbol);
+		
+		
+		*/
+	}
+	
+	
+}

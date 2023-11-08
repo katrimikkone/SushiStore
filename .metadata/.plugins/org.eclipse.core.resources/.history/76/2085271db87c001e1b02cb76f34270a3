@@ -1,0 +1,25 @@
+package backend.sushistore.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import backend.sushistore.domain.ImageRepository;
+
+@Service
+public class ImageDataService {
+	
+	@Autowired
+	private ImageRepository irepository;
+
+	public ImageUploadResponse uploadImage(MultipartFile file) throws IOException {
+
+        imageDataRepository.save(ImageData.builder()
+                .name(file.getOriginalFilename())
+                .type(file.getContentType())
+                .imageData(ImageUtil.compressImage(file.getBytes())).build());
+
+        return new ImageUploadResponse("Image uploaded successfully: " +
+                file.getOriginalFilename());
+
+    }
+}

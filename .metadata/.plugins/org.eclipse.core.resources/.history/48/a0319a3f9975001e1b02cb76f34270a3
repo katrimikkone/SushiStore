@@ -1,0 +1,15 @@
+package backend.sushistore.web;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import backend.sushistore.domain.SymbolRepository;
+
+@Controller
+public class ImageController {
+	
+	@Autowired
+	private SymbolRepository srepository;
+	
+	
+}

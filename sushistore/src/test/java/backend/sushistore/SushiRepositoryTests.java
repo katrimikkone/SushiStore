@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import backend.sushistore.domain.Category;
@@ -14,6 +15,7 @@ import backend.sushistore.domain.Sushi;
 import backend.sushistore.domain.SushiRepository;
 
 @DataJpaTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 public class SushiRepositoryTests {
 
 	@Autowired
@@ -23,15 +25,14 @@ public class SushiRepositoryTests {
 	CategoryRepository crepository;
 	
 	@Test
-	void findAllShouldReturnThreeRowa() {
+	void findAllShouldReturnThreeRows() {
 		Iterable<Sushi> sushis = repository.findAll();
 		assertThat(sushis).hasSize(3);
 	}
 	
 	@Test
 	public void findByNameShouldReturnSushi() {
-		List<Sushi> sushis = repository.findByName("ebi");
-		
+		List<Sushi> sushis = repository.findByName("ebi");	
 		assertThat(sushis).hasSize(1);
 		assertThat(sushis.get(0).getPrice()).isEqualTo(2);
 	}
@@ -51,6 +52,6 @@ public class SushiRepositoryTests {
 		Sushi sushi = sushis.get(0);
 		repository.delete(sushi);
 		List<Sushi> newSushis = repository.findByName("ebi");
-		assertThat(newSushis).hasSize(0);
+		assertThat(newSushis).isEmpty();
 	}
 }

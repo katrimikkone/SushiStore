@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import backend.sushistore.domain.CategoryRepository;
+import backend.sushistore.domain.ImageRepository;
 import backend.sushistore.domain.Sushi;
 import backend.sushistore.domain.SushiRepository;
 import jakarta.validation.Valid;
@@ -23,6 +24,10 @@ public class SushiController {
 	
 	@Autowired
 	private CategoryRepository crepository;
+	
+	@Autowired
+	private ImageRepository irepository;
+	
 	
 	
 	@GetMapping("/login")
@@ -44,7 +49,7 @@ public class SushiController {
 	}
 	
 	
-		@PostMapping("/save")
+	@PostMapping("/save")
 	public String save(@Valid @ModelAttribute("sushi") Sushi sushi, BindingResult bindingResult, Model model) {
 		if(bindingResult.hasErrors()) {
 			model.addAttribute("categories" ,crepository.findAll());
@@ -60,6 +65,7 @@ public class SushiController {
 		if(originalSushi != null) {
 			model.addAttribute("sushi", originalSushi);
 			model.addAttribute("categories", crepository.findAll());
+			model.addAttribute("images", irepository.findAll());
 			return "editsushi";
 		}else {
 			return "redirect:/sushilist";

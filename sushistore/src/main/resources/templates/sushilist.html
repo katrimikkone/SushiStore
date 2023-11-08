@@ -23,6 +23,7 @@
 				<th>Description</th>
 				<th>Price</th>
 				<th>Category</th>
+				<th>Photo</th>
 			 	<th sec:authorize="hasAuthority('ADMIN')"></th> 
 			</tr>
 		</thead>	
@@ -32,6 +33,7 @@
 				<td th:text="${sushi.description}"></td>
 				<td th:text="${sushi.price}"></td>
 				<td th:text="${sushi?.category?.name}"></td> 
+		 		<td><img th:src="@{${'/image/display/'+sushi?.image?.symbolid}}" /> </td> 	
 				<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/edit/{id}(id=${sushi.id})}" class="btn btn-gray">Edit</a></td>
 				<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${sushi.id})}" class="btn btn-danger">Delete</a></td>
 		

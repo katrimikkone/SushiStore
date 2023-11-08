@@ -31,12 +31,13 @@ public class SushiRestController {
 	}
 	
 	@PostMapping("/sushi")
-	Sushi newSushi(@RequestBody Sushi newSushi) {
+	public Sushi newSushi(@RequestBody Sushi newSushi) {
+		
 		return repository.save(newSushi);
 	}
 	
 	@PutMapping("/sushi/{id}")
-	Sushi editSushi(@RequestBody Sushi editedSushi, @PathVariable Long id) {
+	public Sushi editSushi(@RequestBody Sushi editedSushi, @PathVariable Long id) {
 		editedSushi.setId(id);
 		return repository.save(editedSushi);
 	}
@@ -46,5 +47,6 @@ public class SushiRestController {
 		repository.deleteById(id);
 		return "redirect:sushilist";
 	}
-
+	
+	
 }

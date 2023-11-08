@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity6" >
+
+<head>
+	<title>Add sushi</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+	<body>
+	<table>
+		<h1>Add Image</h1>
+		<div>
+				<label for="name">Name</label>
+				<input type="text" id="name" th:field="*{sushi.name}" /><br/>
+				<div th:if="${#fields.hasErrors('sushi.name')}" th:errors="*{sushi.name}">Error</div>
+		</div>
+	</table>
+		
+		<a href="/sushilist" class="btn btn-primary">Back to the listing</a>
+	</body>
+</html>

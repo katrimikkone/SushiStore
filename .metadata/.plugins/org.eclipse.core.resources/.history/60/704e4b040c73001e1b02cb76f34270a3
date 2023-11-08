@@ -1,0 +1,46 @@
+package backend.sushistore.domain;
+
+import java.sql.Blob;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+
+@Entity
+public class Symbol {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long symbolid;
+	@Lob
+	private Blob address;
+	
+	public Symbol() {
+		
+	}
+
+	public Symbol(Long symbolid, Blob address) {
+		super();
+		this.symbolid = symbolid;
+		this.address = address;
+	}
+
+	public Long getSymbolid() {
+		return symbolid;
+	}
+
+	public void setSymbolid(Long symbolid) {
+		this.symbolid = symbolid;
+	}
+
+	public Blob getAddress() {
+		return address;
+	}
+
+	public void setAddress(Blob address) {
+		this.address = address;
+	}
+	
+	
+}

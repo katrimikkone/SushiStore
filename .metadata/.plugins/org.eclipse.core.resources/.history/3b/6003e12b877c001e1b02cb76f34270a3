@@ -1,0 +1,9 @@
+package backend.sushistore.domain;
+
+import java.util.List;
+
+import org.springframework.data.repository.CrudRepository;
+
+public interface SymbolRepository extends CrudRepository<Symbol, Long>{
+	List<Symbol> findByName(String name);
+}

@@ -1,0 +1,16 @@
+package backend.sushistore.domain;
+
+import java.sql.Blob;
+
+public class Symbol {
+	
+	private Long id;
+	private Blob address;
+
+	public Symbol() {
+		
+	}
+
+	
+	
+}

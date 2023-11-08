@@ -1,5 +1,6 @@
 package backend.sushistore.domain;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +30,10 @@ public class Sushi {
 	@JoinColumn(name="categoryid")
 	private Category category;
 	
+	@ManyToOne
+	@JoinColumn(name="symbolid")
+	private Image image;
+	
 
 	public Sushi() {
 
@@ -36,6 +41,18 @@ public class Sushi {
 	
 	
 	
+	public Sushi( String name, String description, double price,
+			Category category, Image image) {
+		super();
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.category = category;
+		this.image = image;
+	}
+
+
+
 	public Sushi(Category category, String name, String description, double price ) {
 		super();
 		this.name = name;
@@ -109,4 +126,18 @@ public class Sushi {
 	public void setCategory(Category category) {
 		this.category = category;
 	}
+
+
+
+	public Image getImage() {
+		return image;
+	}
+
+
+
+	public void setImage(Image image) {
+		this.image = image;
+	}
+	
+	
 }
